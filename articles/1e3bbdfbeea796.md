@@ -3,7 +3,7 @@ title: "About Composition as Code"
 emoji: "⚙️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["cdktf", "terraform", "go", "googlecloud"]
-published: false
+published: true
 ---
 CaC (Composition as Code) について。
 
