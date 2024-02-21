@@ -10,3 +10,12 @@ Terraform について recap する。個人的な memo として。
 Terraform `v1.7.0` で追加された test mocking について。
 
 https://www.hashicorp.com/blog/terraform-1-7-adds-test-mocking-and-config-driven-remove
+
+## Mock providers
+todo
+
+## Overrides
+todo
+
+## Config-driven remove
+todo
