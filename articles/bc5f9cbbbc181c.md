@@ -38,7 +38,7 @@ Server listening on http://localhost:4000/graphql
 ## Define the schema
 - Fuse で定義した `schema.graphqls` を backend と schema を共有するケース。
 
-## Fix `Types`
+### Fix `Types`
 - 今回は簡単に field を追加する。
 
 https://github.com/danny-yamamoto/fuse-dev/blob/a30454ce7756795b83d044523d7b88eba8178dab/types/User.ts#L7
@@ -47,6 +47,7 @@ https://github.com/danny-yamamoto/fuse-dev/blob/a30454ce7756795b83d044523d7b88eb
 
 https://github.com/danny-yamamoto/fuse-dev/blob/a30454ce7756795b83d044523d7b88eba8178dab/types/User.ts#L36
 
+### Run the Fuse API server
 - 起動する
 ```bash
 node ➜ /workspaces/fuse-dev (main) $ npx fuse dev
