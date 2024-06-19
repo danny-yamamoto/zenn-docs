@@ -3,7 +3,7 @@ title: "Custom pipelines: AWS Amplify Gen 2"
 emoji: "🛠️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["amplify", "codebuild", "nestjs"]
-published: false
+published: true
 ---
 Custom pipeline について。
 
@@ -17,6 +17,20 @@ Custom pipeline について。
 - Amplify CI は Gen 1 から CI 内での Docker Commnad は実行できない。6月19日時点。[^2]
 - サービスロールに必要な管理ポリシーを添付する。 `arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess`
 - Frontend Application の pipeline と連携する場合は、Webhook で起動させる。
+- 
+```TypeScript: backend.ts
+// ECS
+// README at: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs-readme.html
+taskDefinition.addContainer("fargate-app", {
+  image: ecs.ContainerImage.fromAsset("./"),
+  portMappings: [
+    {
+      containerPort: 80, // コンテナ内部のポート
+      protocol: ecs.Protocol.TCP,
+    },
+  ],
+});
+```
 
 ```yaml: buildspec.yml
 version: 0.2
