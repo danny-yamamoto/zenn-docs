@@ -5,7 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["amplify", "codebuild", "nestjs"]
 published: true
 ---
-Custom pipeline について。
+Custom pipelines について。
 
 この文章を書くにあたっての要件は、以下の通り。
 - Backend API を ECS に deploy する。
@@ -13,11 +13,11 @@ Custom pipeline について。
     - これは必須ではない。build してある image を使う道もある。
 
 ## Custom pipelines
-- Amplify CI 以外に、GitHub Acitons や Amazon CodeCatalyst での pipeline 実装が紹介されている。Official Docs では。 [^1]
+- Amplify CI 以外に、GitHub Acitons や Amazon CodeCatalyst での pipeline 実装が紹介されている。Official Docs に。 [^1]
 - Amplify CI は Gen 1 から CI 内での Docker Commnad は実行できない。6月19日時点。[^2]
 - サービスロールに必要な管理ポリシーを添付する。 `arn:aws:iam::aws:policy/service-role/AmplifyBackendDeployFullAccess`
 - Frontend Application の pipeline と連携する場合は、Webhook で起動させる。
-- 
+
 ```TypeScript: backend.ts
 // ECS
 // README at: https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_ecs-readme.html
@@ -47,6 +47,10 @@ phases:
 
 ## Tips
 - `--debug` option を付与すると、より詳細な log が出る。
+- `--app-id` は Amplify Console に表示される ID を使用する。
+  - [アプリケーションの設定] - [全般設定]
+  - [アプリ ARN] の末尾の ID を使用する。 `MY_APP_ID`
+    - `arn:aws:amplify:<MY_REGION>:<MY_ACCOUNTID>:apps/<MY_APP_ID>`
 
 ## Conclusion
 「環境にこだわれ」
