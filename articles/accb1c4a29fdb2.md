@@ -6,6 +6,12 @@ topics: ["agentcore", "ai", "llm", "aws"]
 published: false
 ---
 
+## TL;DR
+
+- AgentCore Browser は Managed Browser により、ブラウザ操作に必要なインフラをすべてマネージドで提供する
+- Playwright と連携して、自然言語の指示で Web アプリケーションを操作するエージェントを簡単に開発できる
+- AgentCore は エージェント開発に特化した機能を包括的に提供する
+
 ## はじめに
 
 この blog では、AgentCore Browser を使用したエージェントの開発について書きます。AI エージェントの開発環境は日々進化しており、適切なツールとフレームワークの選択が開発の効率と品質に影響すると考えています。
