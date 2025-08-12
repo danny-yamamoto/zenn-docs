@@ -8,9 +8,9 @@ published: true
 
 ## TL;DR
 
+- AgentCore は エージェント開発に特化した機能を包括的に提供する
 - AgentCore Browser は Managed Browser により、ブラウザ操作に必要なインフラをすべてマネージドで提供する
 - Playwright と連携して、自然言語の指示で Web アプリケーションを操作するエージェントを簡単に開発できる
-- AgentCore は エージェント開発に特化した機能を包括的に提供する
 
 ## はじめに
 
@@ -28,12 +28,19 @@ AgentCore Runtime を筆頭に、AgentCore Browser や AgentCore Memory など�
 
 ![agentcore browser](https://docs.aws.amazon.com/images/bedrock-agentcore/latest/devguide/images/browser-tool.png)
 
-エージェントが Web アプリ操作を行うための Managed Browser を提供します。もし、AgentCore Browser と同等の処理を実装する場合、以下のような処理が必要になると思います。
+AgentCore Browser はエージェントが Web アプリ操作を行うための Managed Browser を提供し、以下のようなブラウザ操作を自動化できます。
+
+- 予約サイトへのログインと予約操作
+- 業務システムへのログインとデータ登録
+
+もし、AgentCore Browser と同等の処理を実装する場合、以下のような処理が必要になると思います。
 - Browser 操作用のインスタンスを起動
 - インスタンスへの接続
 - クロニウムベースのブラウザを起動
 
-AgentCore Browser はこれらの処理をすべてマネージドで提供します。
+AgentCore Browser はこれらの処理をすべてマネージドで提供します。ブラウザ操作のセッション接続中は、ブラウザ操作の状況をリアルタイムで監視できます。
+
+![alt text](/images/accb1c4a29fdb2-a.png)
 
 以下のコードは、AgentCore Browser を使用して、特定の Web サイトにログインするエージェントの例です。
 
@@ -86,7 +93,8 @@ AgentCore Browser はこれらの処理をすべてマネージドで提供し�
 
 ## Summary
 
-この 1 ヶ月、AgentCore と Agent Engine という 2 つのエージェント開発基盤の比較検証を行ってきました。どちらの基盤が優れているかは「何を求めるか」によって変わると思います。AgentCore は、エージェントに必要な機能を提供することに特化していると思います。
+この 1 ヶ月、AgentCore と Agent Engine という 2 つのエージェント開発基盤の比較検証を行ってきました。どちらの基盤が優れているかは「何を求めるか」によって変わると思います。
+AgentCore は、エージェントに必要な機能を提供することに特化していると言えるでしょう。（2025年8月12日時点）
 
 ## Closing
 
